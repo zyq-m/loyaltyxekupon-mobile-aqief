@@ -1,20 +1,306 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import {
+  Login,
 
-export default function App() {
+  //Student
+  Dashboard,
+  Profile,
+  Report,
+  ChangePassword,
+  Transaction,
+  CollectPoint,
+  ClaimReward,
+  CashlessCampaign,
+  GreenCampusCampaign,
+  QRCashlessCampaign,
+  QRGreenCampusCampaign,
+  PINCashlessCampaign,
+  PINGreenCampusCampaign,
+
+  //Cafe Owner
+  CODashboard,
+  COShowQR,
+  COShowPIN,
+  MyQReKupon,
+  MyQRCashless,
+  MyQRGreenCampus,
+
+  //B40 Student
+  B40Dashboard,
+  PayNow,
+  QRScan,
+} from "./pages";
+
+const Stack = createNativeStackNavigator();
+const StudentDrawer = createDrawerNavigator();
+const B40StudentDrawer = createDrawerNavigator();
+const CafeOwnerDrawer = createDrawerNavigator();
+
+function StudentDrawerNavigator() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <StudentDrawer.Navigator
+      screenOptions={{
+        drawerStyle: { paddingTop: 16 },
+        drawerActiveTintColor: "rgba(88, 83, 76, 1)",
+        headerStyle: { backgroundColor: "#FFD400" },
+      }}
+    >
+      <StudentDrawer.Screen
+        name="DashboardDrawer" // Unique name DrawerNavigator
+        component={Dashboard}
+        options={{
+          title: "eKuponXLoyalty@UniSZA",
+          drawerLabel: "Home",
+        }}
+      />
+      <StudentDrawer.Screen
+        name="Transactions"
+        component={Transaction}
+        options={{
+          headerTitle: "Transaction History",
+          drawerLabel: "Transaction History",
+        }}
+      />
+      <StudentDrawer.Screen
+        name="ChangePassword"
+        component={ChangePassword}
+        options={{
+          headerTitle: "Change password",
+          drawerLabel: "Change password",
+        }}
+      />
+      <StudentDrawer.Screen
+        name="Report"
+        component={Report}
+        options={{
+          headerTitle: "Report a problem",
+          drawerLabel: "Report",
+        }}
+      />
+    </StudentDrawer.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function CafeOwnerDrawerNavigator() {
+  return (
+    <CafeOwnerDrawer.Navigator
+      screenOptions={{
+        drawerStyle: { paddingTop: 16 },
+        drawerActiveTintColor: "rgba(88, 83, 76, 1)",
+        headerStyle: { backgroundColor: "#FFD400" },
+      }}
+    >
+      <CafeOwnerDrawer.Screen
+        name="CODashboardDrawer" // Unique name DrawerNavigator
+        component={CODashboard}
+        options={{
+          title: "eKuponXLoyalty@UniSZA",
+          drawerLabel: "Home",
+        }}
+      />
+      <CafeOwnerDrawer.Screen
+        name="Transactions"
+        component={Transaction}
+        options={{
+          headerTitle: "Transaction History",
+          drawerLabel: "Transaction History",
+        }}
+      />
+      <CafeOwnerDrawer.Screen
+        name="Profile" // Unique name DrawerNavigator
+        component={Profile}
+        options={{
+          headerTitle: "Update profile",
+          drawerLabel: "Update profile",
+        }}
+      />
+      <CafeOwnerDrawer.Screen
+        name="ChangePassword"
+        component={ChangePassword}
+        options={{
+          headerTitle: "Change password",
+          drawerLabel: "Change password",
+        }}
+      />
+      <CafeOwnerDrawer.Screen
+        name="Report"
+        component={Report}
+        options={{
+          headerTitle: "Report a problem",
+          drawerLabel: "Report",
+        }}
+      />
+    </CafeOwnerDrawer.Navigator>
+  );
+}
+
+function B40StudentDrawerNavigator() {
+  return (
+    <B40StudentDrawer.Navigator
+      screenOptions={{
+        drawerStyle: { paddingTop: 16 },
+        drawerActiveTintColor: "rgba(88, 83, 76, 1)",
+        headerStyle: { backgroundColor: "#FFD400" },
+      }}
+    >
+      <B40StudentDrawer.Screen
+        name="DashboardDrawer" // Unique name DrawerNavigator
+        component={B40Dashboard}
+        options={{
+          title: "eKuponXLoyalty@UniSZA",
+          drawerLabel: "Home",
+        }}
+      />
+      <B40StudentDrawer.Screen
+        name="Transactions"
+        component={Transaction}
+        options={{
+          headerTitle: "Transaction History",
+          drawerLabel: "Transaction History",
+        }}
+      />
+      <B40StudentDrawer.Screen
+        name="ChangePassword"
+        component={ChangePassword}
+        options={{
+          headerTitle: "Change password",
+          drawerLabel: "Change password",
+        }}
+      />
+      <B40StudentDrawer.Screen
+        name="Report"
+        component={Report}
+        options={{
+          headerTitle: "Report a problem",
+          drawerLabel: "Report",
+        }}
+      />
+    </B40StudentDrawer.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={{
+          headerStyle: { backgroundColor: "#FFD400" },
+          animation: "fade_from_bottom",
+        }}
+      >
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Dashboard"
+          component={StudentDrawerNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CollectPoint"
+          component={CollectPoint}
+          options={{ headerTitle: "Collect Point", headerShown: true }}
+        />
+        <Stack.Screen
+          name="CashlessCampaign"
+          component={CashlessCampaign}
+          options={{ headerTitle: "Cashless Campaign", headerShown: true }}
+        />
+        <Stack.Screen
+          name="QRCashlessCampaign"
+          component={QRCashlessCampaign}
+          options={{
+            headerTitle: "Scan QR(Cashless Campaign)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="PINCashlessCampaign"
+          component={PINCashlessCampaign}
+          options={{
+            headerTitle: "Insert PIN(Cashless Campaign)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="GreenCampusCampaign"
+          component={GreenCampusCampaign}
+          options={{ headerTitle: "Green Campus Campaign", headerShown: true }}
+        />
+        <Stack.Screen
+          name="QRGreenCampusCampaign"
+          component={QRGreenCampusCampaign}
+          options={{
+            headerTitle: "Scan QR(Green Campus Campaign)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="PINGreenCampusCampaign"
+          component={PINGreenCampusCampaign}
+          options={{
+            headerTitle: "Insert PIN(Green Campus Campaign)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="ClaimReward"
+          component={ClaimReward}
+          options={{ headerTitle: "Claim Reward", headerShown: true }}
+        />
+        <Stack.Screen
+          name="CODashboard"
+          component={CafeOwnerDrawerNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="COShowQR"
+          component={COShowQR}
+          options={{ headerTitle: "My QRCode", headerShown: true }}
+        />
+        <Stack.Screen
+          name="COShowPIN"
+          component={COShowPIN}
+          options={{ headerTitle: "One-Time PIN Generator", headerShown: true }}
+        />
+        <Stack.Screen
+          name="MyQReKupon"
+          component={MyQReKupon}
+          options={{ headerTitle: "MyQR eKupon", headerShown: true }}
+        />
+        <Stack.Screen
+          name="MyQRCashless"
+          component={MyQRCashless}
+          options={{ headerTitle: "MyQR Cashless", headerShown: true }}
+        />
+        <Stack.Screen
+          name="MyQRGreenCampus"
+          component={MyQRGreenCampus}
+          options={{ headerTitle: "MyQR Green Campus", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40Dashboard"
+          component={B40StudentDrawerNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PayNow"
+          component={PayNow}
+          options={{ headerTitle: "Choose amount", headerShown: true }}
+        />
+        <Stack.Screen
+          name="QRScan"
+          component={QRScan}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+      <StatusBar style="auto" />
+    </NavigationContainer>
+  );
+}
