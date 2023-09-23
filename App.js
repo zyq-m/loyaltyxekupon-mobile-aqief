@@ -27,11 +27,14 @@ import {
   MyQReKupon,
   MyQRCashless,
   MyQRGreenCampus,
+  MyPINGeneratorCashless,
+  MyPINGeneratorGreenCampus,
 
   //B40 Student
   B40Dashboard,
   PayNow,
   QRScan,
+  PayCafeWeb,
 } from "./pages";
 
 const Stack = createNativeStackNavigator();
@@ -285,6 +288,22 @@ export default function App() {
           options={{ headerTitle: "MyQR Green Campus", headerShown: true }}
         />
         <Stack.Screen
+          name="MyPINGeneratorCashless"
+          component={MyPINGeneratorCashless}
+          options={{
+            headerTitle: "OTP Generator(Cashless)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="MyPINGeneratorGreenCampus"
+          component={MyPINGeneratorGreenCampus}
+          options={{
+            headerTitle: "OTP Generator(Green Campus)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
           name="B40Dashboard"
           component={B40StudentDrawerNavigator}
           options={{ headerShown: false }}
@@ -298,6 +317,11 @@ export default function App() {
           name="QRScan"
           component={QRScan}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PayCafeWeb"
+          component={PayCafeWeb}
+          options={{ headerTitle: "Select Cafe", headerShown: true }}
         />
       </Stack.Navigator>
       <StatusBar style="auto" />

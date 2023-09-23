@@ -22,11 +22,14 @@ import COShowPIN from "./COShowPIN";
 import MyQReKupon from "./MyQReKupon";
 import MyQRCashless from "./MyQRCashless";
 import MyQRGreenCampus from "./MyQRGreenCampus";
+import MyPINGeneratorCashless from "./MyPINGeneratorCashless";
+import MyPINGeneratorGreenCampus from "./MyPINGeneratorGreenCampus";
 
 //B40 Student
 import B40Dashboard from "./B40Dashboard";
 import PayNow from "./PayNow";
 import QRScan from "./QRScan";
+import PayCafeWeb from "./PayCafeWeb";
 
 export {
   Login,
@@ -53,9 +56,12 @@ export {
   MyQReKupon,
   MyQRCashless,
   MyQRGreenCampus,
+  MyPINGeneratorCashless,
+  MyPINGeneratorGreenCampus,
 
   //B40 Student
   B40Dashboard,
   PayNow,
   QRScan,
+  PayCafeWeb,
 };

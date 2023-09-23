@@ -24,9 +24,9 @@ const COShowPIN = () => {
 
   const onNextButtonPress = () => {
     if (active.btn1) {
-      navigation.navigate("CashlessCampaign"); // Navigate to the "CashlessScreen" when btn1 is active
+      navigation.navigate("MyPINGeneratorCashless"); // Navigate to the "CashlessScreen" when btn1 is active
     } else if (active.btn2) {
-      navigation.navigate("GreenCampusCampaign"); // Navigate to the "GreenCampusScreen" when btn2 is active
+      navigation.navigate("MyPINGeneratorGreenCampus"); // Navigate to the "GreenCampusScreen" when btn2 is active
     }
   };
   return (
@@ -59,7 +59,7 @@ const COShowPIN = () => {
         </TouchableOpacity>
       </View>
       <View style={{ paddingBottom: 24 }}>
-        <Button label={"Next"} onPress={onNextButtonPress} />
+        <Button label={"Generate PIN"} onPress={onNextButtonPress} />
       </View>
     </View>
   );

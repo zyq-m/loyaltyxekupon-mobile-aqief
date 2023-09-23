@@ -12,6 +12,11 @@ const PayNow = () => {
     btn1: true,
     btn2: false,
   });
+  const [isWeb, setIsWeb] = useState(false); // Add state for checking if the app is running on the web
+
+  useEffect(() => {
+    setIsWeb(Platform.OS === "web"); // Set the isWeb state based on the platform
+  }, []);
 
   const onActive = (value) => {
     if ("btn1" === value) {
@@ -19,6 +24,14 @@ const PayNow = () => {
     }
     if ("btn2" === value) {
       setActive({ btn1: false, btn2: true });
+    }
+  };
+
+  const SelectCafe = () => {
+    if (active.btn1) {
+      navigation.navigate("PayCafeWeb"); // Navigate to the "CashlessScreen" when btn1 is active
+    } else if (active.btn2) {
+      navigation.navigate("PayCafeWeb"); // Navigate to the "GreenCampusScreen" when btn2 is active
     }
   };
 
@@ -59,7 +72,11 @@ const PayNow = () => {
         </TouchableOpacity>
       </View>
       <View style={{ paddingBottom: 24 }}>
-        <Button label={"Next"} onPress={onNextButtonPress} />
+        {isWeb ? (
+          <Button label={"Select Cafe"} onPress={SelectCafe} /> // Render Input Pin button for web
+        ) : (
+          <Button label={"Next"} onPress={onNextButtonPress} /> // Render Scan QR button for app
+        )}
       </View>
     </View>
   );
