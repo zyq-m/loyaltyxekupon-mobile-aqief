@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "loyalty-e-wallet-mobile",
-    "slug": "loyalty-e-wallet-mobile",
+    "name": "ekuponxloyalty@unisza",
+    "slug": "ekuponxloyalty@unisza",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
