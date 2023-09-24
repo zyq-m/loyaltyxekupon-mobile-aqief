@@ -2,11 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import QRCode from "react-qr-code";
 
-import { globals } from "../styles";
+import { globals } from "../../styles";
 
-const MyQRCashless = () => {
+const MyQReKupon = () => {
   // Data to be encoded in the QR code (e.g., a URL or text)
-  const qrData = "https://www.youtube.com"; // Replace with your desired data
+  const qrData = "https://www.google.com"; // Replace with your desired data
 
   return (
     <View
@@ -33,7 +33,7 @@ const MyQRCashless = () => {
   );
 };
 
-export default MyQRCashless;
+export default MyQReKupon;
 
 const QRStyles = StyleSheet.create({
   QRWrapper: {

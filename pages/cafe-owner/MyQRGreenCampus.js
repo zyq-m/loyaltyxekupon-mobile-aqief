@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import QRCode from "react-qr-code";
 
-import { globals } from "../styles";
+import { globals } from "../../styles";
 
 const MyQRGreenCampus = () => {
   // Data to be encoded in the QR code (e.g., a URL or text)

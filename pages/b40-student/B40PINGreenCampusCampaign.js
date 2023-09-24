@@ -1,16 +1,16 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { Button, Input } from "../components";
-import { globals, insertPINstyle } from "../styles";
+import { Button, Input } from "../../components";
+import { globals, insertPINstyle } from "../../styles";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
-const PINGreenCampusCampaign = () => {
+const B40PINGreenCampusCampaign = () => {
   const navigation = useNavigation();
 
   const toDashboard = () => {
     // You can add your authentication logic here
     // If authentication is successful, navigate to the "Dashboard" screen
-    navigation.navigate("Dashboard"); // Replace "Dashboard" with your route name
+    navigation.navigate("B40Dashboard"); // Replace "Dashboard" with your route name
   };
 
   return (
@@ -31,4 +31,4 @@ const PINGreenCampusCampaign = () => {
   );
 };
 
-export default PINGreenCampusCampaign;
+export default B40PINGreenCampusCampaign;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { View, ScrollView, Platform } from "react-native";
 import { RadioButton } from "react-native-radio-buttons-group";
-import { Button, Refresh } from "../components";
-import { globals } from "../styles";
+import { Button, Refresh } from "../../components";
+import { globals } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 
 const GreenCampusCampaign = () => {

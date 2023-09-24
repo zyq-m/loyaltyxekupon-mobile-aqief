@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image } from "react-native";
-import { Button, Input } from "../components";
-import { globals, insertPINstyle } from "../styles";
+import { Button, Input } from "../../components";
+import { globals, insertPINstyle } from "../../styles";
 
 const MyPINGeneratorGreenCampus = () => {
   const [validationCode, setValidationCode] = useState(""); // Initialize validationCode state

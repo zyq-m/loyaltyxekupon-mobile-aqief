@@ -1,35 +1,43 @@
 import Login from "./Login";
 
 //Student
-import Dashboard from "./Dashboard";
+import Dashboard from "./non-b40-student/Dashboard";
 import Profile from "./Profile";
 import Report from "./Report";
 import ChangePassword from "./ChangePassword";
-import Transaction from "./Transaction";
-import CollectPoint from "./CollectPoint";
-import ClaimReward from "./ClaimReward";
-import CashlessCampaign from "./CashlessCampaign";
-import GreenCampusCampaign from "./GreenCampusCampaign";
-import QRCashlessCampaign from "./QRCashlessCampaign";
-import QRGreenCampusCampaign from "./QRGreenCampusCampaign";
-import PINCashlessCampaign from "./PINCashlessCampaign";
-import PINGreenCampusCampaign from "./PINGreenCampusCampaign";
+import Transaction from "./non-b40-student/Transaction";
+import CollectPoint from "./non-b40-student/CollectPoint";
+import ClaimReward from "./non-b40-student/ClaimReward";
+import CashlessCampaign from "./non-b40-student/CashlessCampaign";
+import GreenCampusCampaign from "./non-b40-student/GreenCampusCampaign";
+import QRCashlessCampaign from "./non-b40-student/QRCashlessCampaign";
+import QRGreenCampusCampaign from "./non-b40-student/QRGreenCampusCampaign";
+import PINCashlessCampaign from "./non-b40-student/PINCashlessCampaign";
+import PINGreenCampusCampaign from "./non-b40-student/PINGreenCampusCampaign";
 
 //Cafe Owner
-import CODashboard from "./CODashboard";
-import COShowQR from "./COShowQR";
-import COShowPIN from "./COShowPIN";
-import MyQReKupon from "./MyQReKupon";
-import MyQRCashless from "./MyQRCashless";
-import MyQRGreenCampus from "./MyQRGreenCampus";
-import MyPINGeneratorCashless from "./MyPINGeneratorCashless";
-import MyPINGeneratorGreenCampus from "./MyPINGeneratorGreenCampus";
+import CODashboard from "./cafe-owner/CODashboard";
+import COShowQR from "./cafe-owner/COShowQR";
+import COShowPIN from "./cafe-owner/COShowPIN";
+import MyQReKupon from "./cafe-owner/MyQReKupon";
+import MyQRCashless from "./cafe-owner/MyQRCashless";
+import MyQRGreenCampus from "./cafe-owner/MyQRGreenCampus";
+import MyPINGeneratorCashless from "./cafe-owner/MyPINGeneratorCashless";
+import MyPINGeneratorGreenCampus from "./cafe-owner/MyPINGeneratorGreenCampus";
 
 //B40 Student
-import B40Dashboard from "./B40Dashboard";
-import PayNow from "./PayNow";
-import QRScan from "./QRScan";
-import PayCafeWeb from "./PayCafeWeb";
+import B40Dashboard from "./b40-student/B40Dashboard";
+import PayNow from "./b40-student/PayNow";
+import QRScan from "./b40-student/QRScan";
+import PayCafeWeb from "./b40-student/PayCafeWeb";
+import B40CollectPoint from "./b40-student/B40CollectPoint";
+import B40ClaimReward from "./b40-student/B40ClaimReward";
+import B40CashlessCampaign from "./b40-student/B40CashlessCampaign";
+import B40GreenCampusCampaign from "./b40-student/B40GreenCampusCampaign";
+import B40PINCashlessCampaign from "./b40-student/B40PINCashlessCampaign";
+import B40PINGreenCampusCampaign from "./b40-student/B40PINGreenCampusCampaign";
+import B40QRCashlessCampaign from "./b40-student/B40QRCashlessCampaign";
+import B40QRGreenCampusCampaign from "./b40-student/B40QRGreenCampusCampaign";
 
 export {
   Login,
@@ -64,4 +72,12 @@ export {
   PayNow,
   QRScan,
   PayCafeWeb,
+  B40CollectPoint,
+  B40ClaimReward,
+  B40CashlessCampaign,
+  B40GreenCampusCampaign,
+  B40PINCashlessCampaign,
+  B40PINGreenCampusCampaign,
+  B40QRCashlessCampaign,
+  B40QRGreenCampusCampaign,
 };

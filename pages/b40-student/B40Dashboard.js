@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-import Profile from "../components/Profile";
-import Amount from "../components/Amount";
-import TransactionContainer from "../components/TransactionContainer";
-import Button from "../components/Button";
-import { globals, dashboardStyle } from "../styles";
+import Profile from "../../components/Profile";
+import Amount from "../../components/Amount";
+import TransactionContainer from "../../components/TransactionContainer";
+import Button from "../../components/Button";
+import { globals, dashboardStyle } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 import FeatherIcon from "react-native-vector-icons/Feather";
 
-const Dashboard = () => {
+const B40Dashboard = () => {
   const navigation = useNavigation();
 
+  const handlePay = () => {
+    navigation.navigate("PayNow"); // Replace route name
+  };
   const handleCP = () => {
-    navigation.navigate("CollectPoint"); // Replace route name
+    navigation.navigate("B40CollectPoint"); // Replace route name
   };
   const handleCR = () => {
-    navigation.navigate("ClaimReward"); // Replace route name
+    navigation.navigate("B40ClaimReward"); // Replace route name
   };
 
   return (
     <View style={globals.container}>
       <View style={[dashboardStyle.logoutContainer, { marginTop: 16 }]}>
-        <Profile textField1={"Muhammad Ali"} textField2={"012345"} />
+        <Profile textField1={"Muhammad Hazman"} textField2={"062711"} />
       </View>
       <View style={{ marginTop: 24 }}>
         <Amount amount={"20.00"} />
+      </View>
+      <View style={{ marginTop: 20 }}>
+        <Button label={"Pay"} onPress={handlePay} />
       </View>
       <View style={{ marginTop: 20 }}>
         <Button label={"Collect Point"} onPress={handleCP} />
@@ -58,4 +64,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default B40Dashboard;

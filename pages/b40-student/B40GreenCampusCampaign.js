@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { View, ScrollView, Platform } from "react-native";
 import { RadioButton } from "react-native-radio-buttons-group";
-import { Button, Refresh } from "../components";
-import { globals } from "../styles";
+import { Button, Refresh } from "../../components";
+import { globals } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 
-const CashlessCampaign = () => {
+const B40GreenCampusCampaign = () => {
   const navigation = useNavigation();
   const [radioBtn, setRadioBtn] = useState([]);
   const [isWeb, setIsWeb] = useState(false); // Add state for checking if the app is running on the web
@@ -17,11 +17,11 @@ const CashlessCampaign = () => {
   }, []);
 
   const ScanQR = () => {
-    navigation.navigate("QRCashlessCampaign"); // Replace route name
+    navigation.navigate("B40QRGreenCampusCampaign"); // Replace route name
   };
 
   const InsertPIN = () => {
-    navigation.navigate("PINCashlessCampaign"); // Replace route name
+    navigation.navigate("B40PINGreenCampusCampaign"); // Replace route name
   };
 
   const localCafeData = [
@@ -141,4 +141,4 @@ const CashlessCampaign = () => {
   );
 };
 
-export default CashlessCampaign;
+export default B40GreenCampusCampaign;

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { globals, loginStyle } from "../styles";
+import { globals, loginStyle } from "../../styles";
 
 const ClaimReward = () => {
   return (

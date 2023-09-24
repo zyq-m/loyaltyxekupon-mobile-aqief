@@ -35,6 +35,14 @@ import {
   PayNow,
   QRScan,
   PayCafeWeb,
+  B40CollectPoint,
+  B40ClaimReward,
+  B40CashlessCampaign,
+  B40GreenCampusCampaign,
+  B40PINCashlessCampaign,
+  B40PINGreenCampusCampaign,
+  B40QRCashlessCampaign,
+  B40QRGreenCampusCampaign,
 } from "./pages";
 
 const Stack = createNativeStackNavigator();
@@ -322,6 +330,55 @@ export default function App() {
           name="PayCafeWeb"
           component={PayCafeWeb}
           options={{ headerTitle: "Select Cafe", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40CollectPoint"
+          component={B40CollectPoint}
+          options={{ headerTitle: "Collect Point", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40ClaimReward"
+          component={B40ClaimReward}
+          options={{ headerTitle: "Claim Reward", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40CashlessCampaign"
+          component={B40CashlessCampaign}
+          options={{ headerTitle: "Cashless Campaign", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40GreenCampusCampaign"
+          component={B40GreenCampusCampaign}
+          options={{ headerTitle: "Green Campus Campaign", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40PINCashlessCampaign"
+          component={B40PINCashlessCampaign}
+          options={{
+            headerTitle: "PIN (Cashless Campaign)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="B40PINGreenCampusCampaign"
+          component={B40PINGreenCampusCampaign}
+          options={{
+            headerTitle: "PIN (Green Campus Campaign)",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="B40QRCashlessCampaign"
+          component={B40QRCashlessCampaign}
+          options={{ headerTitle: "QR (Cashless Campaign)", headerShown: true }}
+        />
+        <Stack.Screen
+          name="B40QRGreenCampusCampaign"
+          component={B40QRGreenCampusCampaign}
+          options={{
+            headerTitle: "QR (Green Campus Campaign)",
+            headerShown: true,
+          }}
         />
       </Stack.Navigator>
       <StatusBar style="auto" />

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-import Profile from "../components/Profile";
-import COAmount from "../components/COAmount";
-import TransactionContainer from "../components/TransactionContainer";
-import Button from "../components/Button";
-import { globals, dashboardStyle } from "../styles";
+import Profile from "../../components/Profile";
+import COAmount from "../../components/COAmount";
+import TransactionContainer from "../../components/TransactionContainer";
+import Button from "../../components/Button";
+import { globals, dashboardStyle } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 import FeatherIcon from "react-native-vector-icons/Feather";
 

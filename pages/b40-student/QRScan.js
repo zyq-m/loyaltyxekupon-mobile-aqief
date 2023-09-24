@@ -1,11 +1,11 @@
 import { View, Image, StyleSheet } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 
-import { Button } from "../components";
+import { Button } from "../../components";
 
-import { QRScanStyle } from "../styles";
+import { QRScanStyle } from "../../styles";
 
-const QRCashlessCampaign = () => {
+const QRScan = () => {
   return (
     <View style={[{ flex: 1, paddingHorizontal: 16, backgroundColor: "#000" }]}>
       <BarCodeScanner style={StyleSheet.absoluteFill} />
@@ -14,14 +14,14 @@ const QRCashlessCampaign = () => {
           <View style={QRScanStyle.row}>
             <Image
               style={[QRScanStyle.square]}
-              source={require("../assets/icons/scanner-icon.png")}
+              source={require("../../assets/icons/scanner-icon.png")}
             />
             <Image
               style={[
                 QRScanStyle.square,
                 { transform: [{ rotateY: "180deg" }] },
               ]}
-              source={require("../assets/icons/scanner-icon.png")}
+              source={require("../../assets/icons/scanner-icon.png")}
             />
           </View>
           <View style={QRScanStyle.row}>
@@ -30,14 +30,14 @@ const QRCashlessCampaign = () => {
                 QRScanStyle.square,
                 { transform: [{ rotateX: "180deg" }] },
               ]}
-              source={require("../assets/icons/scanner-icon.png")}
+              source={require("../../assets/icons/scanner-icon.png")}
             />
             <Image
               style={[
                 QRScanStyle.square,
                 { transform: [{ rotate: "-180deg" }] },
               ]}
-              source={require("../assets/icons/scanner-icon.png")}
+              source={require("../../assets/icons/scanner-icon.png")}
             />
           </View>
         </View>
@@ -49,4 +49,4 @@ const QRCashlessCampaign = () => {
   );
 };
 
-export default QRCashlessCampaign;
+export default QRScan;

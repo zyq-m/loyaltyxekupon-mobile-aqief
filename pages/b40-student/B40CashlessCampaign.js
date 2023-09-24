@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { View, ScrollView, Platform } from "react-native";
 import { RadioButton } from "react-native-radio-buttons-group";
-import { Button, Refresh } from "../components";
-import { globals } from "../styles";
+import { Button, Refresh } from "../../components";
+import { globals } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 
-const PayCafeWeb = () => {
+const B40CashlessCampaign = () => {
   const navigation = useNavigation();
   const [radioBtn, setRadioBtn] = useState([]);
+  const [isWeb, setIsWeb] = useState(false); // Add state for checking if the app is running on the web
 
   useEffect(() => {
     // Initialize the radio buttons state with the local cafe data
     setRadioBtn(localCafeData);
+    setIsWeb(Platform.OS === "web"); // Set the isWeb state based on the platform
   }, []);
+
+  const ScanQR = () => {
+    navigation.navigate("B40QRCashlessCampaign"); // Replace route name
+  };
+
+  const InsertPIN = () => {
+    navigation.navigate("B40PINCashlessCampaign"); // Replace route name
+  };
 
   const localCafeData = [
     { id: 1, label: "Starbucks Malaysia", value: "starbucks", selected: false },
@@ -121,10 +131,14 @@ const PayCafeWeb = () => {
         })}
       </ScrollView>
       <View style={{ paddingBottom: 24, paddingHorizontal: 16 }}>
-        <Button label={"Pay"} />
+        {isWeb ? (
+          <Button label={"Input Pin"} onPress={InsertPIN} /> // Render Input Pin button for web
+        ) : (
+          <Button label={"Scan QR"} onPress={ScanQR} /> // Render Scan QR button for app
+        )}
       </View>
     </View>
   );
 };
 
-export default PayCafeWeb;
+export default B40CashlessCampaign;
