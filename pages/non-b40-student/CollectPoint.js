@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Button } from "../components";
+import { Button } from "../../components";
 
-import { globals, CPStyle } from "../styles";
+import { globals, CPStyle } from "../../styles";
 
 const CollectPoint = () => {
   const navigation = useNavigation();

@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
-import { Button, Input } from "../components";
-import { globals, insertPINstyle } from "../styles";
+import { Button, Input } from "../../components";
+import { globals, insertPINstyle } from "../../styles";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 
-const PINCashlessCampaign = () => {
+const PINGreenCampusCampaign = () => {
   const navigation = useNavigation();
 
   const toDashboard = () => {
@@ -31,4 +31,4 @@ const PINCashlessCampaign = () => {
   );
 };
 
-export default PINCashlessCampaign;
+export default PINGreenCampusCampaign;

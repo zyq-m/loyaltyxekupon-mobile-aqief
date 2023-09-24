@@ -1,6 +1,6 @@
 import { Text, View, Platform } from "react-native";
 
-import { globals, transactionStyle } from "../styles";
+import { globals, transactionStyle } from "../../styles";
 
 const Transaction = () => {
   return (
