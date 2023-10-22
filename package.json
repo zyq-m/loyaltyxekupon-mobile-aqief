@@ -32,7 +32,8 @@
     "react-native-swiper": "^1.6.0",
     "react-native-web": "~0.19.6",
     "react-qr-code": "^2.0.12",
-    "socket.io-client": "^4.7.2"
+    "socket.io-client": "^4.7.2",
+    "expo-secure-store": "~12.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
