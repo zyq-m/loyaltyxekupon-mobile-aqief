@@ -6,18 +6,30 @@ import { useNavigation } from "@react-navigation/native";
 
 import { login } from "../api/auth/auth";
 import { socket } from "../services/socketInstance";
+import { useUserContext } from "../hooks/useUserContext";
+import { storeObject } from "../helpers/asyncStorage";
 
 const Login = () => {
   const navigation = useNavigation();
   const [isCafeOwner, setIsCafeOwner] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const { setUser } = useUserContext();
 
   const handleLogin = async () => {
     // API call
     try {
       const user = await login(id, password);
       socket.emit("user:connect", { id });
+
+      // Update context
+      const details = {
+        id: id,
+        isSignedIn: true,
+        role: user,
+      };
+      setUser(details);
+      storeObject("userDetails", details);
 
       if (user === "B40") {
         navigation.navigate("B40Dashboard");
