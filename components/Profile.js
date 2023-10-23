@@ -6,15 +6,24 @@ import { useNavigation } from "@react-navigation/native";
 
 import { logout } from "../api/auth/auth";
 import { socket } from "../services/socketInstance";
+import { useUserContext } from "../hooks/useUserContext";
+import { removeAll } from "../helpers/asyncStorage";
 
 const Profile = ({ textField1, textField2 }) => {
   const navigation = useNavigation();
+  const { setUser } = useUserContext();
+
   const onLogout = async () => {
     // You can add your authentication logic here
     // If authentication is successful, navigate to the "Dashboard" screen
     try {
       await logout();
       socket.emit("user:disconnect", { id: "id" });
+      // Remove storage
+      await removeAll();
+      // Update context
+      setUser({});
+
       navigation.navigate("Login"); // Replace "Dashboard" with your route name
     } catch (error) {
       console.log(error);
