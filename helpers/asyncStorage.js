@@ -40,3 +40,19 @@ export const getObject = async key => {
     console.log(e);
   }
 };
+
+export const remove = async key => {
+  try {
+    await AsyncStorage.removeItem(key);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const removeAll = async () => {
+  try {
+    await AsyncStorage.clear();
+  } catch (e) {
+    console.log(e);
+  }
+};
