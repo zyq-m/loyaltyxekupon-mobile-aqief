@@ -4,12 +4,21 @@ import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 import FA from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
 
+import { logout } from "../api/auth/auth";
+import { socket } from "../services/socketInstance";
+
 const Profile = ({ textField1, textField2 }) => {
   const navigation = useNavigation();
-  const onLogout = () => {
+  const onLogout = async () => {
     // You can add your authentication logic here
     // If authentication is successful, navigate to the "Dashboard" screen
-    navigation.navigate("Login"); // Replace "Dashboard" with your route name
+    try {
+      await logout();
+      socket.emit("user:disconnect", { id: "id" });
+      navigation.navigate("Login"); // Replace "Dashboard" with your route name
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
