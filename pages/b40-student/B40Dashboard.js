@@ -54,8 +54,7 @@ const B40Dashboard = () => {
             style={[
               dashboardStyle.transactionHeader,
               { marginTop: 24, marginBottom: 24 },
-            ]}
-          >
+            ]}>
             No recent transactions
           </Text>
         </TransactionContainer>
