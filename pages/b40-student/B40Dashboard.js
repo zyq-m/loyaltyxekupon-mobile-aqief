@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import Profile from "../../components/Profile";
 import Amount from "../../components/Amount";
@@ -8,8 +8,12 @@ import { globals, dashboardStyle } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
 import FeatherIcon from "react-native-vector-icons/Feather";
 
+import { socket } from "../../services/socketInstance";
+import { useUserContext } from "../../hooks/useUserContext";
+
 const B40Dashboard = () => {
   const navigation = useNavigation();
+  const { user } = useUserContext();
 
   const handlePay = () => {
     navigation.navigate("PayNow"); // Replace route name
@@ -20,6 +24,14 @@ const B40Dashboard = () => {
   const handleCR = () => {
     navigation.navigate("B40ClaimReward"); // Replace route name
   };
+
+  useEffect(() => {
+    console.log(user);
+    socket.emit("student:get-wallet-total", { matricNo: user?.id });
+    socket.on("student:get-wallet-total", (res) => {
+      console.log(res);
+    });
+  }, []);
 
   return (
     <View style={globals.container}>
@@ -54,7 +66,8 @@ const B40Dashboard = () => {
             style={[
               dashboardStyle.transactionHeader,
               { marginTop: 24, marginBottom: 24 },
-            ]}>
+            ]}
+          >
             No recent transactions
           </Text>
         </TransactionContainer>
