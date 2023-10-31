@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import Profile from "../../components/Profile";
 import COAmount from "../../components/COAmount";
 import TransactionContainer from "../../components/TransactionContainer";
+import COTransactionList from "../../components/COTransactionList";
+import COdummyData from "../../components/COdummyData";
 import Button from "../../components/Button";
 import { globals, dashboardStyle } from "../../styles";
 import { useNavigation } from "@react-navigation/native";
@@ -44,14 +46,7 @@ const CODashboard = () => {
           />
         </View>
         <TransactionContainer>
-          <Text
-            style={[
-              dashboardStyle.transactionHeader,
-              { marginTop: 24, marginBottom: 24 },
-            ]}
-          >
-            No recent transactions
-          </Text>
+          <COTransactionList data={COdummyData} />
         </TransactionContainer>
       </View>
     </View>
