@@ -14,6 +14,7 @@ import { useUserContext } from "../../hooks/useUserContext";
 const B40Dashboard = () => {
   const navigation = useNavigation();
   const { user } = useUserContext();
+  const [profile, setProfile] = useState({});
 
   const handlePay = () => {
     navigation.navigate("PayNow"); // Replace route name
@@ -26,9 +27,9 @@ const B40Dashboard = () => {
   };
 
   useEffect(() => {
-    console.log(user);
     socket.emit("student:get-wallet-total", { matricNo: user?.id });
     socket.on("student:get-wallet-total", (res) => {
+      setProfile(res);
       console.log(res);
     });
   }, []);
@@ -39,7 +40,10 @@ const B40Dashboard = () => {
         <Profile textField1={"Muhammad Hazman"} textField2={"062711"} />
       </View>
       <View style={{ marginTop: 24 }}>
-        <Amount amount={"20.00"} />
+        <Amount
+          amount={`RM ${profile?.coupon?.total}.00`}
+          subTitle={"Total coupon"}
+        />
       </View>
       <View style={{ marginTop: 20 }}>
         <Button label={"Pay"} onPress={handlePay} />
