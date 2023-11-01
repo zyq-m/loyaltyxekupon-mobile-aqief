@@ -13,6 +13,9 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 const CODashboard = () => {
   const navigation = useNavigation();
 
+  const showTransaction = () => {
+    navigation.navigate("COTransaction"); // Replace route name
+  };
   const handleShowQR = () => {
     navigation.navigate("COShowQR"); // Replace route name
   };
@@ -42,7 +45,7 @@ const CODashboard = () => {
           <FeatherIcon
             name="more-horizontal"
             size={25}
-            onPress={() => navigation.navigate("Transactions")}
+            onPress={showTransaction}
           />
         </View>
         <TransactionContainer>

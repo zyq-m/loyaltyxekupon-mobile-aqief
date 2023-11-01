@@ -18,6 +18,9 @@ const B40Dashboard = () => {
   const { user } = useUserContext();
   const [profile, setProfile] = useState({});
 
+  const showTransaction = () => {
+    navigation.navigate("B40Transaction"); // Replace route name
+  };
   const handlePay = () => {
     navigation.navigate("PayNow"); // Replace route name
   };
@@ -64,7 +67,7 @@ const B40Dashboard = () => {
           <FeatherIcon
             name="more-horizontal"
             size={25}
-            onPress={() => navigation.navigate("Transactions")}
+            onPress={showTransaction}
           />
         </View>
         <TransactionContainer>

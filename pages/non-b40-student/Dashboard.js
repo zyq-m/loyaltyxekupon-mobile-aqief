@@ -13,6 +13,9 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 const Dashboard = () => {
   const navigation = useNavigation();
 
+  const showTransaction = () => {
+    navigation.navigate("NB40Transaction"); // Replace route name
+  };
   const handleCP = () => {
     navigation.navigate("CollectPoint"); // Replace route name
   };
@@ -42,7 +45,7 @@ const Dashboard = () => {
           <FeatherIcon
             name="more-horizontal"
             size={25}
-            onPress={() => navigation.navigate("Transactions")}
+            onPress={showTransaction}
           />
         </View>
         <TransactionContainer>
