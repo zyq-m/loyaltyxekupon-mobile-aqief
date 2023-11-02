@@ -12,3 +12,10 @@ export const socket = io("https://9xqngmhn-3000.asse.devtunnels.ms/", {
     token: await getToken(),
   },
 }); // store in env
+
+socket.on("connect_error", async (err) => {
+  if (err.message === "authentication error") {
+    socket.auth.token = await getToken();
+  }
+  socket.connect();
+});

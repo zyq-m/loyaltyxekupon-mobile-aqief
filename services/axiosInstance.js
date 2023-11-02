@@ -33,17 +33,15 @@ api.interceptors.response.use(
     if (error.response.status === 403 && !originalRequest._retry) {
       originalRequest._retry = true;
       const newToken = await renewToken();
-      console.log(newToken);
       // Store access token
-      if (newToken) {
-        const oldToken = await getObject("token");
-        oldToken.accessToken = newToken.data.accessToken;
-        await storeObject("token", oldToken);
-      }
+      const oldToken = await getObject("token");
+      oldToken.accessToken = newToken.data.accessToken;
+      await storeObject("token", oldToken);
 
       axios.defaults.headers.common[
         "Authorization"
-      ] = `Bearer ${token?.accessToken}`;
+      ] = `Bearer ${newToken.data.accessToken}`;
+
       return api(originalRequest);
     }
     return Promise.reject(error);
