@@ -4,10 +4,6 @@ import { getObject, storeObject } from "../helpers/asyncStorage";
 
 import { EXPO_PUBLIC_API_URL } from "@env";
 
-// const api = axios.create({
-//   baseURL: "https://9xqngmhn-3000.asse.devtunnels.ms/",
-// });
-
 export const api = axios.create({
   baseURL: EXPO_PUBLIC_API_URL,
 });
